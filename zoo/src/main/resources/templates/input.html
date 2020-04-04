@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New or Edit Contact</title>
+</head>
+<body>
+<form th:object="${newAnimals}" th:action="@{/update/{id}(id=${newAnimals.id})}" method=POST>
+Species: <input name="species" size="20" th:field="*{species}"><br />
+Amount: <input name="amount" size="20" th:field="*{amount}"><br />
+Country: <input name="location.country" size="20" th:field="*{location.country}"><br />
+Zoo Name: <input name="location.zooName" size="20" th:field="*{location.zooName}"><br />
+
+<input name="Submit" type="submit" value="submit" />
+</form>
+<a href="../viewAll">View All Animals</a>
+
+</body>
+</html>

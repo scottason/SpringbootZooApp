@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Animals</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentAnimals: ${Animals}">
+	<td th:text="${currentAnimals.id}" />
+	<td th:text="${currentAnimals.species}" />
+	<td th:text="${currentAnimals.amount}" />
+	<td th:text="${currentAnimals.location.zooName}" />
+	<td th:text="${currentAnimals.location.country}" />
+	<td><a th:href="@{/edit/{id}(id=${currentAnimals.id})}">Edit</a></td>
+	<td><a th:href="@{/delete/{id}(id=${currentAnimals.id})}">Delete</a></td>
+	</tr>
+</table>
+</form>
+<a href="../inputAnimals">Add a new contact</a>
+</body>
+</html>
